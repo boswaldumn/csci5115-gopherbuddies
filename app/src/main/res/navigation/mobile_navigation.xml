@@ -22,4 +22,10 @@
         android:name="com.example.gopherbuddyapp.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_myprofile"
+        android:name="com.example.gopherbuddyapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_myprofile"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
