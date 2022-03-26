@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_myprofile"
-        android:name="com.example.gopherbuddyapp.ui.notifications.NotificationsFragment"
+        android:name="com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment"
         android:label="@string/title_myprofile"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_myprofile" />
 </navigation>
