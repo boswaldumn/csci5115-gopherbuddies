@@ -42,6 +42,9 @@ public class MyProfileFragment extends Fragment {
         final TextView studyHabits = binding.studyHabits;
         myProfileViewModel.getStudyHabits().observe(getViewLifecycleOwner(), studyHabits::setText);
 
+        final TextView coursesList = binding.coursesList;
+        myProfileViewModel.getCourses().observe(getViewLifecycleOwner(), coursesList::setText);
+
         return root;
     }
 
