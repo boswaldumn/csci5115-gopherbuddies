@@ -9,8 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class MyProfileFragment extends Fragment {
@@ -19,6 +23,7 @@ public class MyProfileFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         MyProfileViewModel myProfileViewModel =
                 new ViewModelProvider(this).get(MyProfileViewModel.class);
 
@@ -33,6 +38,9 @@ public class MyProfileFragment extends Fragment {
 
         final TextView collegeText = binding.textCollege;
         myProfileViewModel.getCollege().observe(getViewLifecycleOwner(), collegeText::setText);
+
+        final TextView studyHabits = binding.studyHabits;
+        myProfileViewModel.getStudyHabits().observe(getViewLifecycleOwner(), studyHabits::setText);
 
         return root;
     }
