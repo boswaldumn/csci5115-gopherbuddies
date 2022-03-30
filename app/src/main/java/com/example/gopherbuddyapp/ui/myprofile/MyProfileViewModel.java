@@ -10,6 +10,7 @@ public class MyProfileViewModel extends ViewModel {
     private final MutableLiveData<String> majorText;
     private final MutableLiveData<String> collegeText;
     private final MutableLiveData<String> studyHabitsText;
+    private final MutableLiveData<String> coursesList;
 
     public MyProfileViewModel() {
         nameText = new MutableLiveData<>();
@@ -25,6 +26,9 @@ public class MyProfileViewModel extends ViewModel {
         studyHabitsText.setValue("Likes:\n + Small groups (2-3 people)\n + Libraries, coffee shops, and on-campus spaces\n\n"
                                     + "Dislikes:\n - Online group work\n - Noisy environments");
 
+        coursesList = new MutableLiveData<>();
+        coursesList.setValue("PE 1015: Weight Training\nBIOL 1009: General Biology\nCSCI 1133: Introduction to Computing\nPHYS 1301: Introductory Physics\n");
+
     }
 
     public LiveData<String> getName() {
@@ -38,4 +42,6 @@ public class MyProfileViewModel extends ViewModel {
     public LiveData<String> getCollege() { return collegeText; }
 
     public LiveData<String> getStudyHabits() { return studyHabitsText; }
+
+    public LiveData<String> getCourses() { return coursesList; }
 }
