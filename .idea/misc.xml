@@ -12,10 +12,12 @@
         <entry key="..\:/AndroidStudioProjects/csci5115-gopherbuddyapp/app/src/main/res/layout/fragment_findspace.xml" value="0.3912037037037037" />
         <entry key="..\:/AndroidStudioProjects/csci5115-gopherbuddyapp/app/src/main/res/layout/fragment_myprofile.xml" value="0.14754098360655737" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/GopherBuddyApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_findspace.xml" value="0.23978304655655563" />
+        <entry key="app/src/main/res/layout/fragment_myprofile.xml" value="0.182518115942029" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

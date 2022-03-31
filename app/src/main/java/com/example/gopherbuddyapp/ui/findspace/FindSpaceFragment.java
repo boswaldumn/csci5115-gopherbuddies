@@ -1,9 +1,12 @@
 package com.example.gopherbuddyapp.ui.findspace;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +45,17 @@ public class FindSpaceFragment extends Fragment {
         final TextView coursesList = binding.coursesList;
         findSpaceViewModel.getCourses().observe(getViewLifecycleOwner(), coursesList::setText);
 
+        final Button messageButton = binding.messageButton;
+        messageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri webpage = Uri.parse("http://discord.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                    startActivity(intent);
+
+        }
+        }
+        );
         return root;
     }
 
