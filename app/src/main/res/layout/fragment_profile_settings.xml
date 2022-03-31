@@ -7,13 +7,111 @@
     android:layout_height="match_parent"
     tools:context=".ui.myprofile.ProfileSettingsFragment">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is profile settings fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/settingsProfilePic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/my_profile_pic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/settingProfilePicButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Change Profile Picture"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editCollege"
+        app:layout_constraintEnd_toEndOf="@+id/settingsProfilePic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsProfilePic" />
+
+    <EditText
+        android:id="@+id/editCollege"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="College"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/collegeLabel" />
+
+    <EditText
+        android:id="@+id/editProfileName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Mac Intosh"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+
+    <EditText
+        android:id="@+id/editMajor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Major"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/majorLabel" />
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/editProfileName"
+        android:text="Name:"
+        android:textColor="#4A4A4A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/majorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:labelFor="@id/editProfileName"
+        android:text="Major:"
+        android:textColor="#4A4A4A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileName" />
+
+    <TextView
+        android:id="@+id/collegeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:labelFor="@id/editProfileName"
+        android:text="College:"
+        android:textColor="#4A4A4A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/editMajor" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
