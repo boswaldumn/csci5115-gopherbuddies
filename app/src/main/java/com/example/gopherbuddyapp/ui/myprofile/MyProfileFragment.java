@@ -4,18 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
-
 
 public class MyProfileFragment extends Fragment {
 
@@ -42,8 +39,26 @@ public class MyProfileFragment extends Fragment {
         final TextView studyHabits = binding.studyHabits;
         myProfileViewModel.getStudyHabits().observe(getViewLifecycleOwner(), studyHabits::setText);
 
+        final TextView coursesHeader = binding.profileCoursesHeader;
         final TextView coursesList = binding.coursesList;
         myProfileViewModel.getCourses().observe(getViewLifecycleOwner(), coursesList::setText);
+
+        final ImageView profileSchedule = binding.profileSchedule;
+        profileSchedule.setVisibility(View.GONE);
+
+        final Button coursesButton = binding.buttonCourses;
+        coursesButton.setOnClickListener(view -> {
+            coursesList.setVisibility(View.VISIBLE);
+            coursesHeader.setVisibility(View.VISIBLE);
+            profileSchedule.setVisibility(View.GONE);
+        });
+
+        final Button scheduleButton = binding.buttonSchedule;
+        scheduleButton.setOnClickListener(view -> {
+            coursesList.setVisibility(View.GONE);
+            coursesHeader.setVisibility(View.GONE);
+            profileSchedule.setVisibility(View.VISIBLE);
+        });
 
         return root;
     }

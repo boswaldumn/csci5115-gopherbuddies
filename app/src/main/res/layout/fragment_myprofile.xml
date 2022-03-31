@@ -124,7 +124,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
-            android:id="@+id/courseHeader"
+            android:id="@+id/buttonCourses"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -142,11 +142,11 @@
             android:text="Schedule"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/courseHeader"
+            app:layout_constraintStart_toEndOf="@+id/buttonCourses"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <TextView
-            android:id="@+id/userCoursesNumber"
+            android:id="@+id/profile_courses_header"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -158,7 +158,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/courseHeader" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonCourses" />
 
         <TextView
             android:id="@+id/courses_list"
@@ -172,7 +172,19 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userCoursesNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/profile_courses_header" />
+
+        <ImageView
+            android:id="@+id/profileSchedule"
+            android:layout_width="0dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_schedule"
+            app:srcCompat="@drawable/my_profile_schedule" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
