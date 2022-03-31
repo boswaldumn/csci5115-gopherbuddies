@@ -10,9 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gopherbuddyapp.MainActivity;
+import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentFindspaceBinding;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
 
@@ -49,13 +52,16 @@ public class FindSpaceFragment extends Fragment {
         messageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Uri webpage = Uri.parse("http://discord.com");
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-                    startActivity(intent);
+                startActivity(intent);
 
-        }
-        }
-        );
+            }
+
+        });
+
+
         return root;
     }
 
