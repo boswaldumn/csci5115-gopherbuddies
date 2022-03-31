@@ -12,7 +12,7 @@
         tools:layout_editor_absoluteY="1dp">
 
         <ImageView
-            android:id="@+id/profilePicture"
+            android:id="@+id/findSpaceProfilePicture"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="12dp"
@@ -29,10 +29,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+            app:layout_constraintBottom_toBottomOf="@+id/findSpaceProfilePicture"
             app:layout_constraintEnd_toStartOf="@+id/edit_button"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/profilePicture"
+            app:layout_constraintStart_toEndOf="@+id/findSpaceProfilePicture"
             app:layout_constraintTop_toBottomOf="@+id/text_major" />
 
         <TextView
@@ -46,7 +46,7 @@
             app:layout_constraintBottom_toTopOf="@+id/text_major"
             app:layout_constraintEnd_toStartOf="@+id/edit_button"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/profilePicture"
+            app:layout_constraintStart_toEndOf="@+id/findSpaceProfilePicture"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -58,7 +58,7 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+            app:layout_constraintBottom_toBottomOf="@+id/findSpaceProfilePicture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +71,7 @@
             app:layout_constraintBottom_toTopOf="@+id/text_college"
             app:layout_constraintEnd_toStartOf="@+id/edit_button"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/profilePicture"
+            app:layout_constraintStart_toEndOf="@+id/findSpaceProfilePicture"
             app:layout_constraintTop_toBottomOf="@+id/text_name" />
 
         <View
@@ -82,7 +82,7 @@
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
+            app:layout_constraintTop_toBottomOf="@+id/findSpaceProfilePicture" />
 
         <View
             android:id="@+id/divider2"
@@ -124,7 +124,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
-            android:id="@+id/button_courses"
+            android:id="@+id/courseHeader"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -142,11 +142,11 @@
             android:text="Schedule"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_courses"
+            app:layout_constraintStart_toEndOf="@+id/courseHeader"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <TextView
-            android:id="@+id/courses_header"
+            android:id="@+id/findViewCoursesNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -158,7 +158,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_courses" />
+            app:layout_constraintTop_toBottomOf="@+id/courseHeader" />
 
         <TextView
             android:id="@+id/courses_list"
@@ -172,7 +172,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/courses_header" />
+            app:layout_constraintTop_toBottomOf="@+id/findViewCoursesNumber" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

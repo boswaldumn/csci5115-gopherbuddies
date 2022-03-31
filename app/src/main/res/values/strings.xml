@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">GopherBuddyApp</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_findspace">Find Space</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_myprofile">My Profile</string>
+    <string name="findspace_profilepicture">User\'s Profile Picture</string>
+    <string name="findspace_followbutton">Follow</string>
+    <string name="findspace_messagebutton">Message</string>
+    <string name="findspace_studyheader">Study Habits (80% match)</string>
+    <string name="findspace_studyhabits">Likes/Dislikes</string>
+    <string name="findspace_coursesheader">Courses Shared (1 course)</string>
+    <string name="findspace_courses">PE 1015: Weight Training</string>
+
 </resources>

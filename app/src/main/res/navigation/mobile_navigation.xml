@@ -12,10 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.gopherbuddyapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_findspace"
+        android:name="com.example.gopherbuddyapp.ui.findspace.FindSpaceFragment"
+        android:label="@string/title_findspace" />
 
     <fragment
         android:id="@+id/navigation_notifications"
