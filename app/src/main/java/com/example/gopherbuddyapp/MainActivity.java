@@ -1,10 +1,14 @@
 package com.example.gopherbuddyapp;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment;
+import com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
