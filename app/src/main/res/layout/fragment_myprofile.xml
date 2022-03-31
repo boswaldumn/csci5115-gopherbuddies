@@ -15,7 +15,8 @@
             android:id="@+id/userProfilePicture"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:contentDescription="User's Profile Picture"
             android:src="@drawable/my_profile_pic"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +48,7 @@
             app:layout_constraintEnd_toStartOf="@+id/edit_button"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/userProfilePicture"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/userProfilePicture" />
 
         <Button
             android:id="@+id/edit_button"
