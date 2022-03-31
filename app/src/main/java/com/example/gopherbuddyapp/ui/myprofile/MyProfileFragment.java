@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
 
 public class MyProfileFragment extends Fragment {
@@ -58,6 +60,14 @@ public class MyProfileFragment extends Fragment {
             coursesList.setVisibility(View.GONE);
             coursesHeader.setVisibility(View.GONE);
             profileSchedule.setVisibility(View.VISIBLE);
+        });
+
+        final Button editButton = binding.editButton;
+        editButton.setOnClickListener(view -> {
+            ProfileSettingsFragment profileSettingsFragment = new ProfileSettingsFragment();
+            FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, profileSettingsFragment);
+            fragmentTransaction.commit();
         });
 
         return root;
