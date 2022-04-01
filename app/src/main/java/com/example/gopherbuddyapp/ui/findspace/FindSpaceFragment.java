@@ -18,6 +18,7 @@ import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentFindspaceBinding;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class FindSpaceFragment extends Fragment {
@@ -61,6 +62,18 @@ public class FindSpaceFragment extends Fragment {
 
         });
 
+        final FloatingActionButton addUserButton = binding.addUserButton;
+        addUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                findSpaceViewModel.updateUserData();
+                findSpaceViewModel.getName().observe(getViewLifecycleOwner(), nameText::setText);
+                findSpaceViewModel.getMajor().observe(getViewLifecycleOwner(), majorText::setText);
+                findSpaceViewModel.getCollege().observe(getViewLifecycleOwner(), collegeText::setText);
+                findSpaceViewModel.getStudyHabits().observe(getViewLifecycleOwner(), studyHabits::setText);
+                findSpaceViewModel.getCourses().observe(getViewLifecycleOwner(), coursesList::setText);
+            }
+        });
 
         return root;
     }

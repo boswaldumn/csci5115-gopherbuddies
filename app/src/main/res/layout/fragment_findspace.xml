@@ -15,7 +15,7 @@
             android:id="@+id/findSpaceProfilePicture"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="40dp"
             android:contentDescription="@string/findspace_profilepicture"
             android:src="@drawable/my_profile_pic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -163,6 +163,17 @@
             android:text="@string/findspace_messagebutton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_college" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addUserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_add" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
