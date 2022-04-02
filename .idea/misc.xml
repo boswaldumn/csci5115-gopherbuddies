@@ -6,20 +6,17 @@
         <entry key="..\:/Users/isaac/AndroidStudioProjects/GopherBuddyApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable-anydpi/ic_myprofile_icon.xml" value="0.1" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable/fragment_myprofile_courses.xml" value="0.11" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.104" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.128" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.104" />
-        <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/drawable/rectangle_study_habits.xml" value="0.1605" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/layout/fragment_myprofile.xml" value="0.4" />
-        <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/layout/fragment_myprofile_courses.xml" value="0.264" />
-        <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/layout/fragment_myprofile_schedule.xml" value="0.3625" />
-        <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/layout/fragment_profile_settings.xml" value="0.264" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/csci5115-gopherbuddies/app/src/main/res/menu/bottom_nav_menu.xml" value="0.264" />
+        <entry key="..\:/csci5115-gopherbuddies/app/src/main/res/layout/fragment_buddyprofile.xml" value="0.13924050632911392" />
+        <entry key="..\:/csci5115-gopherbuddies/app/src/main/res/layout/fragment_myprofile.xml" value="0.42166569598136283" />
       </map>
     </option>
   </component>
