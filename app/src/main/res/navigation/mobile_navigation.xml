@@ -27,4 +27,11 @@
         android:name="com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment"
         android:label="@string/title_myprofile"
         tools:layout="@layout/fragment_myprofile" />
+
+    <fragment
+        android:id="@+id/navigation_buddyprofile"
+        android:name="com.example.gopherbuddyapp.ui.buddyselect.BuddySelectFragment"
+        android:label="@string/title_buddyprofile"
+        tools:layout="@layout/fragment_buddyprofile" />
+
 </navigation>
