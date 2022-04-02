@@ -11,8 +11,23 @@ import androidx.annotation.Nullable;
 
 import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
+import com.example.gopherbuddyapp.databinding.FragmentProfileSettingsBinding;
 
 public class ProfileSettingsFragment extends Fragment {
+
+    private FragmentProfileSettingsBinding binding;
+    private String nameText;
+    private String majorText;
+    private String collegeText;
+    private String[] likesArray;
+    private String[] dislikesArray;
+    private String[] coursesArray;
+
+    public ProfileSettingsFragment(SettingsObject settings) {
+        nameText = settings.getName();
+        majorText = settings.getMajor();
+        collegeText = settings.getCollege();
+    }
 
     @Nullable
     @Override
@@ -20,11 +35,18 @@ public class ProfileSettingsFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+        binding = FragmentProfileSettingsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        binding.editProfileName.setText(nameText);
+        binding.editMajor.setText(majorText);
+        binding.editCollege.setText(collegeText);
+
         if (getActivity() instanceof MainActivity) {
             ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        return inflater.inflate(R.layout.fragment_profile_settings, container, false);
+        return root;
     }
 
 }
