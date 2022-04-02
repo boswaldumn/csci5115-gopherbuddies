@@ -13,6 +13,7 @@ public class MyProfileViewModel extends ViewModel {
     private final MutableLiveData<String> coursesList;
 
     public MyProfileViewModel() {
+
         nameText = new MutableLiveData<>();
         nameText.setValue("Mac Intosh");
 

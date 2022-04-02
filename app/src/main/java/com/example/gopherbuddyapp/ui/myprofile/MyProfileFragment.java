@@ -11,39 +11,58 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
 
 public class MyProfileFragment extends Fragment {
 
     private FragmentMyprofileBinding binding;
+    private SettingsObject settingsObject;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        MyProfileViewModel myProfileViewModel =
-                new ViewModelProvider(this).get(MyProfileViewModel.class);
+        if (getActivity() instanceof MainActivity) {
+            settingsObject = ((MainActivity) getActivity()).getSettings();
+        }
 
         binding = FragmentMyprofileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView nameText = binding.textName;
-        myProfileViewModel.getName().observe(getViewLifecycleOwner(), nameText::setText);
+        nameText.setText(settingsObject.getName());
 
         final TextView majorText = binding.textMajor;
-        myProfileViewModel.getMajor().observe(getViewLifecycleOwner(), majorText::setText);
+        majorText.setText(settingsObject.getMajor());
 
         final TextView collegeText = binding.textCollege;
-        myProfileViewModel.getCollege().observe(getViewLifecycleOwner(), collegeText::setText);
+        collegeText.setText(settingsObject.getCollege());
 
         final TextView studyHabits = binding.studyHabits;
-        myProfileViewModel.getStudyHabits().observe(getViewLifecycleOwner(), studyHabits::setText);
+        String[] likes = settingsObject.getLikes();
+        String[] dislikes = settingsObject.getDislikes();
+        String studyPreferences = "Likes:\n";
+        for (int i = 0; i < likes.length; i++) {
+            studyPreferences += "+ " + likes[i] + "\n";
+        }
+        studyPreferences += "\nDislikes:\n";
+        for (int i = 0; i < dislikes.length; i++) {
+            studyPreferences += "- " + dislikes[i] + "\n";
+        }
+        studyHabits.setText(studyPreferences);
 
         final TextView coursesHeader = binding.profileCoursesHeader;
         final TextView coursesList = binding.coursesList;
-        myProfileViewModel.getCourses().observe(getViewLifecycleOwner(), coursesList::setText);
+        String[] coursesArray = settingsObject.getCourses();
+        String coursesText = "";
+        for (int i = 0; i < coursesArray.length; i++) {
+            coursesText += coursesArray[i] + "\n";
+        }
+        coursesList.setText(coursesText);
 
         final ImageView profileSchedule = binding.profileSchedule;
         profileSchedule.setVisibility(View.GONE);
@@ -64,7 +83,7 @@ public class MyProfileFragment extends Fragment {
 
         final Button editButton = binding.editButton;
         editButton.setOnClickListener(view -> {
-            ProfileSettingsFragment profileSettingsFragment = new ProfileSettingsFragment();
+            ProfileSettingsFragment profileSettingsFragment = new ProfileSettingsFragment(settingsObject);
             FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, profileSettingsFragment).addToBackStack(null);
             fragmentTransaction.commit();

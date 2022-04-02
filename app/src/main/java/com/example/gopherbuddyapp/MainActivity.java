@@ -5,6 +5,7 @@ import android.view.MenuItem;
 
 import com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment;
 import com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment;
+import com.example.gopherbuddyapp.ui.myprofile.SettingsObject;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import com.google.android.material.tabs.TabLayout;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private SettingsObject profileSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        profileSettings = new SettingsObject();
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -59,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void updateSettings(SettingsObject newSettings) {
+        profileSettings = newSettings;
+    }
+
+    public SettingsObject getSettings() {
+        return profileSettings;
     }
 
 }
