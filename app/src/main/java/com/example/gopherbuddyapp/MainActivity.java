@@ -1,30 +1,25 @@
 package com.example.gopherbuddyapp;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
 import com.example.gopherbuddyapp.ui.findspace.FindSpaceViewModel;
 import com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment;
+import com.example.gopherbuddyapp.ui.myprofile.MyProfileViewModel;
 import com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment;
 import com.example.gopherbuddyapp.ui.myprofile.SettingsObject;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.gopherbuddyapp.databinding.ActivityMainBinding;
-import com.google.android.material.tabs.TabLayout;
-
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         initializeBuddies();
         profileSettings = new SettingsObject();
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(

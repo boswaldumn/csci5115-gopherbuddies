@@ -33,4 +33,28 @@ public class SettingsObject {
     public String[] getLikes() { return likesArray; };
     public String[] getDislikes() { return dislikesArray; };
     public String[] getCourses() { return coursesArray; };
+
+    public void setName(String name) {
+        nameText = name;
+    }
+
+    public void setMajor(String major) {
+        majorText = major;
+    }
+
+    public void setCollege(String college) {
+        collegeText = college;
+    }
+
+    public void setLikes(String[] likes) {
+        likesArray = likes;
+    }
+
+    public void setDislikes(String[] dislikes) {
+        dislikesArray = dislikes;
+    }
+
+    public void setCourses(String[] courses) {
+        coursesArray = courses;
+    }
 }

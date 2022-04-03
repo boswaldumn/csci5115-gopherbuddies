@@ -10,22 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.gopherbuddyapp.databinding.FragmentHomeBinding;
-import com.example.gopherbuddyapp.ui.home.HomeViewModel;
+import com.example.gopherbuddyapp.databinding.FragmentFindspaceemptyBinding;
 
 public class FindSpaceEmptyFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentFindspaceemptyBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         FindSpaceEmptyViewModel emptyViewModel =
                 new ViewModelProvider(this).get(FindSpaceEmptyViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentFindspaceemptyBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textFindspaceempty;
         emptyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.net.HttpCookie;
+import java.util.Set;
+
 public class MyProfileViewModel extends ViewModel {
 
     private final MutableLiveData<String> nameText;
@@ -11,8 +14,11 @@ public class MyProfileViewModel extends ViewModel {
     private final MutableLiveData<String> collegeText;
     private final MutableLiveData<String> studyHabitsText;
     private final MutableLiveData<String> coursesList;
+    private SettingsObject settings;
 
     public MyProfileViewModel() {
+
+        settings = new SettingsObject();
 
         nameText = new MutableLiveData<>();
         nameText.setValue("Mac Intosh");
