@@ -17,11 +17,14 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
-
+import com.example.gopherbuddyapp.databinding.FragmentProfileSettingsBinding;
+import com.example.gopherbuddyapp.databinding.FragmentExternalPlatformBinding;
 public class MyProfileFragment extends Fragment {
 
     private FragmentMyprofileBinding binding;
+    private FragmentProfileSettingsBinding binding2;
     private SettingsObject settingsObject;
+    private ExternalPlatformFragment externalPlatformFragment;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -89,7 +92,9 @@ public class MyProfileFragment extends Fragment {
             fragmentTransaction.commit();
         });
 
-        return root;
+
+
+            return root;
     }
 
     @Override
