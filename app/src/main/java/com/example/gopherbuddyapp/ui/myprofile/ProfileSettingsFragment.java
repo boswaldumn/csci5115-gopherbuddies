@@ -95,6 +95,90 @@ public class ProfileSettingsFragment extends Fragment {
             }
         });
 
+        String[] likes = currentSettings.getLikes();
+        String likesString = "";
+        for (int i = 0; i < likes.length; i++) {
+            likesString += likes[i];
+            if (i + 1 <= likes.length) {
+                likesString += "\n";
+            }
+        }
+        binding.editLikes.setText(likesString);
+        binding.editLikes.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String[] updatedLikes = editable.toString().split("\n");
+                currentSettings.setLikes(updatedLikes);
+                updateSettings();
+            }
+        });
+
+        String[] dislikes = currentSettings.getDislikes();
+        String dislikesString = "";
+        for (int i = 0; i < dislikes.length; i++) {
+            dislikesString += dislikes[i];
+            if (i + 1 <= dislikes.length) {
+                dislikesString += "\n";
+            }
+        }
+        binding.editDislikes.setText(dislikesString);
+        binding.editDislikes.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String[] updatedDislikes = editable.toString().split("\n");
+                currentSettings.setDislikes(updatedDislikes);
+                updateSettings();
+            }
+        });
+
+        String[] courses = currentSettings.getCourses();
+        String coursesString = "";
+        for (int i = 0; i < courses.length; i++) {
+            coursesString += courses[i];
+            if (i + 1 <= courses.length) {
+                coursesString += "\n";
+            }
+        }
+        binding.editCourses.setText(coursesString);
+        binding.editCourses.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String[] updatedCourses = editable.toString().split("\n");
+                currentSettings.setCourses(updatedCourses);
+                updateSettings();
+            }
+        });
+
         if (getActivity() instanceof MainActivity) {
             ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
