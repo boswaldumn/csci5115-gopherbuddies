@@ -10,81 +10,107 @@
         android:id="@+id/textView3"
         android:layout_width="285dp"
         android:layout_height="40dp"
-        android:text="Link your accounts:"
+        android:text="Link your accounts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="69dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="146dp"
-        app:layout_constraintEnd_toStartOf="@+id/Googlebutton"
-        app:srcCompat="@drawable/googleimg"
-        tools:layout_editor_absoluteY="88dp" />
-
-    <Button
-        android:id="@+id/Googlebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="146dp"
-        android:text="Link Google"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="98dp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="69dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="152dp"
-        app:layout_constraintEnd_toStartOf="@+id/DiscordButton"
-        app:srcCompat="@drawable/discordimg"
-        tools:layout_editor_absoluteY="195dp" />
-
-    <Button
-        android:id="@+id/DiscordButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:text="Link Discord"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        tools:layout_editor_absoluteY="206dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="69dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="156dp"
-        app:layout_constraintEnd_toStartOf="@+id/CanvasButton"
-        app:srcCompat="@drawable/canvasimg"
-        tools:layout_editor_absoluteY="305dp" />
-
-    <Button
-        android:id="@+id/CanvasButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:text="Link Canvas"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        tools:layout_editor_absoluteY="316dp" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="69dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="156dp"
-        app:layout_constraintEnd_toStartOf="@+id/ZoomButton"
-        app:srcCompat="@drawable/zoomimg"
-        tools:layout_editor_absoluteY="402dp" />
 
     <Button
         android:id="@+id/ZoomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
+        android:layout_marginBottom="204dp"
         android:text="Link Zoom"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        tools:layout_editor_absoluteY="417dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="69dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/Googlebutton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977"
+        app:srcCompat="@drawable/googleimg" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="69dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="192dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ZoomButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/zoomimg" />
+
+    <Button
+        android:id="@+id/CanvasButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginBottom="64dp"
+        android:text="Link Canvas"
+        app:layout_constraintBottom_toTopOf="@+id/ZoomButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/DiscordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="72dp"
+        android:text="Link Discord"
+        app:layout_constraintBottom_toTopOf="@+id/CanvasButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="69dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toStartOf="@+id/CanvasButton"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/canvasimg" />
+
+    <Button
+        android:id="@+id/Googlebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginBottom="60dp"
+        android:text="Link Google"
+        app:layout_constraintBottom_toTopOf="@+id/DiscordButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="69dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/DiscordButton"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/discordimg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

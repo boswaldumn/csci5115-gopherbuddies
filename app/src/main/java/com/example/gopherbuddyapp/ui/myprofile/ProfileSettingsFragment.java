@@ -15,11 +15,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.gopherbuddyapp.MainActivity;
-<<<<<<< HEAD
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
-=======
->>>>>>> f6e66a9e115ab594116e6b0a38ceb5852b15b6f1
+
 import com.example.gopherbuddyapp.databinding.FragmentProfileSettingsBinding;
 import com.example.gopherbuddyapp.databinding.FragmentExternalPlatformBinding;
 
@@ -195,25 +193,25 @@ public class ProfileSettingsFragment extends Fragment {
             ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        final Button linkPlatformsButton = binding.linkPlatformsButton;
-        linkPlatformsButton.setOnClickListener(view -> {
-            Fragment fragment = new ExternalPlatformFragment();
+        final Button linkPlatforms = binding.linkPlatformsButton;
+        linkPlatforms.setOnClickListener(view -> {
+            ExternalPlatformFragment externalPlatformFragment = new ExternalPlatformFragment();
             FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment).addToBackStack(null);
+            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, externalPlatformFragment);
             fragmentTransaction.commit();
         });
 
         return root;
     }
 
-<<<<<<< HEAD
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
-}
-=======
+
+
     public void updateSettings() {
         currentSettings.setName(nameText);
         currentSettings.setMajor(majorText);
@@ -222,4 +220,3 @@ public class ProfileSettingsFragment extends Fragment {
     }
 
 }
->>>>>>> f6e66a9e115ab594116e6b0a38ceb5852b15b6f1
