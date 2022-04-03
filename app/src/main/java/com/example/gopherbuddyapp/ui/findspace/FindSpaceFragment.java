@@ -40,6 +40,7 @@ public class FindSpaceFragment extends Fragment {
             binding = FragmentFindspaceBinding.inflate(inflater, container, false);
             View root = binding.getRoot();
 
+            findSpaceViewModel.updateUserData();
             final ImageView findSpaceProfilePicture = binding.findSpaceProfilePicture;
             findSpaceViewModel.getProfilePic().observe(getViewLifecycleOwner(), findSpaceProfilePicture::setImageResource);
 
