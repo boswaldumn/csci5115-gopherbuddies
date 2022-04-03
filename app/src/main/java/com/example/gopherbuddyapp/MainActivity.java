@@ -8,6 +8,7 @@ import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
 import com.example.gopherbuddyapp.ui.findspace.FindSpaceViewModel;
 import com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment;
 import com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment;
+import com.example.gopherbuddyapp.ui.myprofile.SettingsObject;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.gopherbuddyapp.databinding.ActivityMainBinding;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +29,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private SettingsObject profileSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
         initializeFindSpaceUsers();
         initializeBuddies();
+        profileSettings = new SettingsObject();
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -100,4 +105,34 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> courses = BuddyViewModel.getBuddyCoursesList();
         courses.add("PE 1015: Weight Training\nPE 1012: Beginning Running\nPE 1031: Sabre Fencing\nPE 1205: Scuba and Skin Diving");
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+                bottomNavigationView.setSelectedItemId(R.id.navigation_myprofile);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    public void updateSettings(SettingsObject newSettings) {
+        profileSettings = newSettings;
+    }
+
+    public SettingsObject getSettings() {
+        return profileSettings;
+    }
+
 }
