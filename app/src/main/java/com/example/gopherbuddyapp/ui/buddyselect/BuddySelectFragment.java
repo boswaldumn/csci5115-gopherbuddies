@@ -35,7 +35,7 @@ public class BuddySelectFragment extends Fragment {
 
         binding = FragmentBuddyselectBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        buddySelectViewModel.updateUserData();
         // Buddy One
         final ImageView buddyOneProfilePicture = binding.buddyOneImageView;
         final TextView buddyNameOne = binding.BuddyNameOneText;

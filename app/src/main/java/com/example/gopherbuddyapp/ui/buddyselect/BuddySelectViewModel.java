@@ -58,4 +58,29 @@ public class BuddySelectViewModel extends ViewModel {
 
     public LiveData<String> getBuddyNameFour() { return buddyNameFour; }
     public LiveData<Integer> getBuddyFourProfilePic() { return buddyFourProfilePic; }
+
+    public void updateUserData() {
+        if(BuddyViewModel.getBuddyNameList().size() > 0) {
+            buddyOneProfilePic.setValue(BuddyViewModel.getBuddyProfilePicList().get(0));
+            buddyNameOne.setValue(BuddyViewModel.getBuddyNameList().get(0));
+        }
+
+        // Buddy Two
+        if(BuddyViewModel.getBuddyNameList().size() > 1) {
+            buddyTwoProfilePic.setValue(BuddyViewModel.getBuddyProfilePicList().get(1));
+            buddyNameTwo.setValue(BuddyViewModel.getBuddyNameList().get(1));
+        }
+
+        // Buddy Three
+        if(BuddyViewModel.getBuddyNameList().size() > 2) {
+            buddyThreeProfilePic.setValue(BuddyViewModel.getBuddyProfilePicList().get(2));
+            buddyNameThree.setValue(BuddyViewModel.getBuddyNameList().get(2));
+        }
+
+        // Buddy Four
+        if(BuddyViewModel.getBuddyNameList().size() > 3) {
+            buddyFourProfilePic.setValue(BuddyViewModel.getBuddyProfilePicList().get(3));
+            buddyNameFour.setValue(BuddyViewModel.getBuddyNameList().get(3));
+        }
+    }
 }
