@@ -5,6 +5,9 @@ import android.view.MenuItem;
 
 import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
 import com.example.gopherbuddyapp.ui.findspace.FindSpaceViewModel;
+import com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment;
+import com.example.gopherbuddyapp.ui.myprofile.MyProfileViewModel;
+import com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment;
 import com.example.gopherbuddyapp.ui.myprofile.SettingsObject;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,12 +23,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
     private SettingsObject profileSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding;
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
