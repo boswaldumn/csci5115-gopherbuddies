@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentFindspaceBinding;
+import com.example.gopherbuddyapp.databinding.FragmentFindspaceemptyBinding;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
 import com.example.gopherbuddyapp.ui.buddypage.BuddyFragment;
 import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
@@ -28,8 +29,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class FindSpaceFragment extends Fragment {
 
     private @NonNull FragmentFindspaceBinding binding;
-
-
+    private @NonNull FragmentFindspaceemptyBinding emptyBinding;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -109,11 +109,16 @@ public class FindSpaceFragment extends Fragment {
             });
             return root;
         } else {
+            FindSpaceEmptyViewModel findSpaceErrorViewModel =
+                    new ViewModelProvider(this).get(FindSpaceEmptyViewModel.class);
+
+            emptyBinding = FragmentFindspaceemptyBinding.inflate(inflater, container, false);
+            View root = emptyBinding.getRoot();
             FindSpaceEmptyFragment emptyFragment = new FindSpaceEmptyFragment();
             FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, emptyFragment);
             fragmentTransaction.commit();
-            return null;
+            return root;
         }
     }
 

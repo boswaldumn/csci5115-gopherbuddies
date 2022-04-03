@@ -14,7 +14,8 @@
     <fragment
         android:id="@+id/navigation_findspace"
         android:name="com.example.gopherbuddyapp.ui.findspace.FindSpaceFragment"
-        android:label="@string/title_findspace" />
+        android:label="@string/title_findspace"
+        tools:layout="@layout/fragment_findspace"/>
 
     <fragment
         android:id="@+id/navigation_notifications"
