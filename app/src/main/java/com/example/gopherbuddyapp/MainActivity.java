@@ -1,13 +1,18 @@
 package com.example.gopherbuddyapp;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
+import com.example.gopherbuddyapp.ui.findspace.FindSpaceViewModel;
 import com.example.gopherbuddyapp.ui.myprofile.MyProfileFragment;
 import com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -15,6 +20,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.gopherbuddyapp.databinding.ActivityMainBinding;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        initializeFindSpaceUsers();
+        initializeBuddies();
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -38,4 +48,56 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
+    public void initializeFindSpaceUsers() {
+        ArrayList<Integer> pics = FindSpaceViewModel.getFindSpaceProfilePicList();
+        pics.add(R.drawable.annedroid);
+        pics.add(R.drawable.samsung);
+        pics.add(R.drawable.edvidia);
+
+        ArrayList<String> names = FindSpaceViewModel.getFindSpaceNameList();
+        names.add("Anne Droid");
+        names.add("Sam Sung");
+        names.add("Ed Vidia");
+
+        ArrayList<String> majors = FindSpaceViewModel.getFindSpaceMajorList();
+        majors.add("Computer Science Major");
+        majors.add("Acting Major");
+        majors.add("Apparel Design Major");
+
+        ArrayList<String> colleges = FindSpaceViewModel.getFindSpaceCollegeList();
+        colleges.add("College of Science and Engineering");
+        colleges.add("College of Liberal Arts");
+        colleges.add("College of Design");
+
+        ArrayList<String> habits = FindSpaceViewModel.getFindSpaceHabitsList();
+        habits.add("Likes:\n + Small groups (2-3 people)\n\n" + "Dislikes:\n - Noisy environments\n");
+        habits.add("Likes:\n + Medium groups (3-5 people)\n\n" + "Dislikes:\n - Noisy environments\n");
+        habits.add("Likes:\n + Large groups (5+ people)\n\n" + "Dislikes:\n - Noisy environments\n");
+
+        ArrayList<String> courses = FindSpaceViewModel.getFindSpaceCoursesList();
+        courses.add("PE 1015: Weight Training\nBIOL 1009: General Biology\n");
+        courses.add("PE 1016: Weight Training\nBIOL 1010: General Biology\n");
+        courses.add("PE 1017: Weight Training\nBIOL 1011: General Biology\n");
+    }
+
+    public void initializeBuddies() {
+        ArrayList<Integer> pics = BuddyViewModel.getBuddyProfilePicList();
+        pics.add(R.drawable.goldy);
+
+        ArrayList<String> names = BuddyViewModel.getBuddyNameList();
+        names.add("Goldy Gopher");
+
+        ArrayList<String> majors = BuddyViewModel.getBuddyMajorList();
+        majors.add("Mascot Major");
+
+        ArrayList<String> colleges = BuddyViewModel.getBuddyCollegeList();
+        colleges.add("College of Liberal Arts");
+
+        ArrayList<String> habits = BuddyViewModel.getBuddyHabitsList();
+        habits.add("Likes:\n + Large groups (200-300 people)\n + Stadiums, fields, and on-campus spaces\n\n"
+                + "Dislikes:\n - Online group work\n - Quiet environments");
+
+        ArrayList<String> courses = BuddyViewModel.getBuddyCoursesList();
+        courses.add("PE 1015: Weight Training\nPE 1012: Beginning Running\nPE 1031: Sabre Fencing\nPE 1205: Scuba and Skin Diving");
+    }
 }
