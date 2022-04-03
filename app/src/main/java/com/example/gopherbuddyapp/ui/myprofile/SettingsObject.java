@@ -45,4 +45,16 @@ public class SettingsObject {
     public void setCollege(String college) {
         collegeText = college;
     }
+
+    public void setLikes(String[] likes) {
+        likesArray = likes;
+    }
+
+    public void setDislikes(String[] dislikes) {
+        dislikesArray = dislikes;
+    }
+
+    public void setCourses(String[] courses) {
+        coursesArray = courses;
+    }
 }
