@@ -12,6 +12,12 @@
     <string name="findspace_studyhabits">Likes/Dislikes</string>
     <string name="findspace_coursesheader">Courses Shared (1 course)</string>
     <string name="findspace_courses">PE 1015: Weight Training</string>
+    <string name="allCourses">All Courses</string>
+    <string name="myCourses">My Courses</string>
+    <string-array name="courseOptions">
+        <item>@string/allCourses</item>
+        <item>@string/myCourses</item>
+    </string-array>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
