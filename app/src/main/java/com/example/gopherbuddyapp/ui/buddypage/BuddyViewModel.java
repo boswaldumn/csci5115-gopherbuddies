@@ -22,8 +22,9 @@ public class BuddyViewModel extends ViewModel {
     private static ArrayList<String> buddyNameList = new ArrayList<String>();
     private static ArrayList<String> buddyMajorList = new ArrayList<String>();
     private static ArrayList<String> buddyCollegeList = new ArrayList<String>();
-    private static ArrayList<String> buddyHabitsList = new ArrayList<String>();
-    private static ArrayList<String> buddyCoursesList = new ArrayList<String>();
+    private static ArrayList<String[]> buddyLikesList = new ArrayList<String[]>();
+    private static ArrayList<String[]> buddyDislikesList = new ArrayList<String[]>();
+    private static ArrayList<String[]> buddyCoursesList = new ArrayList<String[]>();
 
     public BuddyViewModel() {
         buddyProfilePic= new MutableLiveData<>();
@@ -39,10 +40,28 @@ public class BuddyViewModel extends ViewModel {
         buddyCollegeText.setValue(buddyCollegeList.get(index));
 
         buddyStudyText = new MutableLiveData<>();
-        buddyStudyText.setValue(buddyHabitsList.get(index));
+        String[] likes = getBuddyLikesList().get(index);
+        String[] dislikes = getBuddyDislikesList().get(index);
+        String studyPreferences = "Likes:\n";
+        for (int i = 0; i < likes.length; i++) {
+            studyPreferences += "+ " + likes[i] + "\n";
+        }
+        studyPreferences += "\nDislikes:\n";
+        for (int i = 0; i < dislikes.length; i++) {
+            studyPreferences += "- " + dislikes[i] + "\n";
+        }
+        buddyStudyText.setValue(studyPreferences);
 
         buddyCourseText = new MutableLiveData<>();
-        buddyCourseText.setValue(buddyCoursesList.get(index));
+        String[] courses = getBuddyCoursesList().get(index);
+        String coursesString = "";
+        for (int i = 0; i < courses.length; i++) {
+            coursesString += courses[i];
+            if (i + 1 <= courses.length) {
+                coursesString += "\n";
+            }
+        }
+        buddyCourseText.setValue(coursesString);
     }
 
     public LiveData<Integer> getBuddyProfilePic() { return buddyProfilePic; }
@@ -56,8 +75,9 @@ public class BuddyViewModel extends ViewModel {
     public static ArrayList<String> getBuddyNameList() { return buddyNameList; }
     public static ArrayList<String> getBuddyMajorList() { return buddyMajorList; }
     public static ArrayList<String> getBuddyCollegeList() { return buddyCollegeList; }
-    public static ArrayList<String> getBuddyHabitsList() { return buddyHabitsList; }
-    public static ArrayList<String> getBuddyCoursesList() { return buddyCoursesList; }
+    public static ArrayList<String[]> getBuddyLikesList() { return buddyLikesList; }
+    public static ArrayList<String[]> getBuddyDislikesList() { return buddyDislikesList; }
+    public static ArrayList<String[]> getBuddyCoursesList() { return buddyCoursesList; }
     public static int getIndex() { return index; }
     public static void setIndex(int x) { index = x; }
 

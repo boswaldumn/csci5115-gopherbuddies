@@ -21,7 +21,7 @@ import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
 public class MyProfileFragment extends Fragment {
 
     private FragmentMyprofileBinding binding;
-    private SettingsObject settingsObject;
+    private static SettingsObject settingsObject;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -90,6 +90,10 @@ public class MyProfileFragment extends Fragment {
         });
 
         return root;
+    }
+
+    public static SettingsObject getSettingsObject() {
+        return settingsObject;
     }
 
     @Override

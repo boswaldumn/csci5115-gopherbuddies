@@ -14,7 +14,7 @@ public class MyProfileViewModel extends ViewModel {
     private final MutableLiveData<String> collegeText;
     private final MutableLiveData<String> studyHabitsText;
     private final MutableLiveData<String> coursesList;
-    private SettingsObject settings;
+    private static SettingsObject settings;
 
     public MyProfileViewModel() {
 
@@ -51,4 +51,6 @@ public class MyProfileViewModel extends ViewModel {
     public LiveData<String> getStudyHabits() { return studyHabitsText; }
 
     public LiveData<String> getCourses() { return coursesList; }
+
+    public static SettingsObject getSettings() { return settings; }
 }

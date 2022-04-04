@@ -150,7 +150,6 @@ public class ProfileSettingsFragment extends Fragment {
                 updateSettings();
             }
         });
-
         String[] courses = currentSettings.getCourses();
         String coursesString = "";
         for (int i = 0; i < courses.length; i++) {
@@ -159,6 +158,7 @@ public class ProfileSettingsFragment extends Fragment {
                 coursesString += "\n";
             }
         }
+
         binding.editCourses.setText(coursesString);
         binding.editCourses.addTextChangedListener(new TextWatcher() {
             @Override
