@@ -6,21 +6,30 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.gopherbuddyapp.MainActivity;
+import com.example.gopherbuddyapp.R;
+import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
+
 import com.example.gopherbuddyapp.databinding.FragmentProfileSettingsBinding;
+import com.example.gopherbuddyapp.databinding.FragmentExternalPlatformBinding;
 
 public class ProfileSettingsFragment extends Fragment {
 
     private FragmentProfileSettingsBinding binding;
+    private FragmentExternalPlatformBinding binding2;
     private String nameText;
     private String majorText;
     private String collegeText;
     private SettingsObject currentSettings;
+
 
     public ProfileSettingsFragment(SettingsObject settings) {
         nameText = settings.getName();
@@ -28,6 +37,7 @@ public class ProfileSettingsFragment extends Fragment {
         collegeText = settings.getCollege();
         currentSettings = settings;
     }
+
 
     @Nullable
     @Override
@@ -183,8 +193,24 @@ public class ProfileSettingsFragment extends Fragment {
             ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        final Button linkPlatforms = binding.linkPlatformsButton;
+        linkPlatforms.setOnClickListener(view -> {
+            ExternalPlatformFragment externalPlatformFragment = new ExternalPlatformFragment();
+            FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, externalPlatformFragment);
+            fragmentTransaction.commit();
+        });
+
         return root;
     }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
 
     public void updateSettings() {
         currentSettings.setName(nameText);
