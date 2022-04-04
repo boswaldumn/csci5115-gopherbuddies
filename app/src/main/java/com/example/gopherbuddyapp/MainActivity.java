@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private SettingsObject profileSettings;
+    private static SettingsObject profileSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,15 +68,20 @@ public class MainActivity extends AppCompatActivity {
         colleges.add("College of Liberal Arts");
         colleges.add("College of Design");
 
-        ArrayList<String> habits = FindSpaceViewModel.getFindSpaceHabitsList();
-        habits.add("Likes:\n + Small groups (2-3 people)\n\n" + "Dislikes:\n - Noisy environments\n");
-        habits.add("Likes:\n + Medium groups (3-5 people)\n\n" + "Dislikes:\n - Noisy environments\n");
-        habits.add("Likes:\n + Large groups (5+ people)\n\n" + "Dislikes:\n - Noisy environments\n");
+        ArrayList<String[]> likes = FindSpaceViewModel.getFindSpaceLikesList();
+        likes.add(new String[]{"Small groups (2-3 people)"});
+        likes.add(new String[]{"Medium groups (3-5 people)"});
+        likes.add(new String[]{"Large groups (5+ people)"});
 
-        ArrayList<String> courses = FindSpaceViewModel.getFindSpaceCoursesList();
-        courses.add("PE 1015: Weight Training\nBIOL 1009: General Biology\n");
-        courses.add("PE 1016: Weight Training\nBIOL 1010: General Biology\n");
-        courses.add("PE 1017: Weight Training\nBIOL 1011: General Biology\n");
+        ArrayList<String[]> dislikes = FindSpaceViewModel.getFindSpaceDislikesList();
+        dislikes.add(new String[]{"Noisy environments"});
+        dislikes.add(new String[]{"Noisy environments"});
+        dislikes.add(new String[]{"Noisy environments"});
+
+        ArrayList<String[]> courses = FindSpaceViewModel.getFindSpaceCoursesList();
+        courses.add(new String[]{"PE 1015: Weight Training", "BIOL 1009: General Biology"});
+        courses.add(new String[]{"PE 1016: Weight Training", "BIOL 1010: General Biology"});
+        courses.add(new String[]{"PE 1017: Weight Training", "BIOL 1011: General Biology"});
     }
 
     public void initializeBuddies() {
@@ -92,12 +97,15 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> colleges = BuddyViewModel.getBuddyCollegeList();
         colleges.add("College of Liberal Arts");
 
-        ArrayList<String> habits = BuddyViewModel.getBuddyHabitsList();
-        habits.add("Likes:\n + Large groups (200-300 people)\n + Stadiums, fields, and on-campus spaces\n\n"
-                + "Dislikes:\n - Online group work\n - Quiet environments");
+        ArrayList<String[]> likes = BuddyViewModel.getBuddyLikesList();
+        likes.add(new String[]{"Large groups (200-300 people)", "Stadiums, fields, and on-campus spaces"});
 
-        ArrayList<String> courses = BuddyViewModel.getBuddyCoursesList();
-        courses.add("PE 1015: Weight Training\nPE 1012: Beginning Running\nPE 1031: Sabre Fencing\nPE 1205: Scuba and Skin Diving");
+
+        ArrayList<String[]> dislikes = BuddyViewModel.getBuddyDislikesList();
+        dislikes.add(new String[]{"Online group work", "Quiet environments"});
+
+        ArrayList<String[]> courses = BuddyViewModel.getBuddyCoursesList();
+        courses.add(new String[]{"PE 1015: Weight Training", "PE 1012: Beginning Running", "PE 1031: Sabre Fencing", "PE 1205: Scuba and Skin Diving"});
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -125,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         profileSettings = newSettings;
     }
 
-    public SettingsObject getSettings() {
+    public static SettingsObject getSettings() {
         return profileSettings;
     }
 

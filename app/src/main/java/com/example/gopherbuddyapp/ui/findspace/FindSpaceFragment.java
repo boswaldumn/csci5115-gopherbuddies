@@ -23,6 +23,7 @@ import com.example.gopherbuddyapp.databinding.FragmentFindspaceemptyBinding;
 import com.example.gopherbuddyapp.databinding.FragmentMyprofileBinding;
 import com.example.gopherbuddyapp.ui.buddypage.BuddyFragment;
 import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
+import com.example.gopherbuddyapp.ui.myprofile.SettingsObject;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -39,8 +40,7 @@ public class FindSpaceFragment extends Fragment {
 
             binding = FragmentFindspaceBinding.inflate(inflater, container, false);
             View root = binding.getRoot();
-
-            findSpaceViewModel.updateUserData();
+            findSpaceViewModel.updateUserData(); // Needed to allow empty page to show up when necessary
             final ImageView findSpaceProfilePicture = binding.findSpaceProfilePicture;
             findSpaceViewModel.getProfilePic().observe(getViewLifecycleOwner(), findSpaceProfilePicture::setImageResource);
 
@@ -53,8 +53,14 @@ public class FindSpaceFragment extends Fragment {
             final TextView collegeText = binding.textCollege;
             findSpaceViewModel.getCollege().observe(getViewLifecycleOwner(), collegeText::setText);
 
+            final TextView studyHeader = binding.findSpaceStudyHeader;
+            findSpaceViewModel.getStudyHabitsHeader().observe(getViewLifecycleOwner(), studyHeader::setText);
+
             final TextView studyHabits = binding.studyHabits;
             findSpaceViewModel.getStudyHabits().observe(getViewLifecycleOwner(), studyHabits::setText);
+
+            final TextView coursesHeader = binding.findViewCoursesHeader;
+            findSpaceViewModel.getCoursesHeader().observe(getViewLifecycleOwner(), coursesHeader::setText);
 
             final TextView coursesList = binding.coursesList;
             findSpaceViewModel.getCourses().observe(getViewLifecycleOwner(), coursesList::setText);
@@ -81,7 +87,9 @@ public class FindSpaceFragment extends Fragment {
                     findSpaceViewModel.getName().observe(getViewLifecycleOwner(), nameText::setText);
                     findSpaceViewModel.getMajor().observe(getViewLifecycleOwner(), majorText::setText);
                     findSpaceViewModel.getCollege().observe(getViewLifecycleOwner(), collegeText::setText);
+                    findSpaceViewModel.getStudyHabitsHeader().observe(getViewLifecycleOwner(), studyHeader::setText);
                     findSpaceViewModel.getStudyHabits().observe(getViewLifecycleOwner(), studyHabits::setText);
+                    findSpaceViewModel.getCoursesHeader().observe(getViewLifecycleOwner(), coursesHeader::setText);
                     findSpaceViewModel.getCourses().observe(getViewLifecycleOwner(), coursesList::setText);
                 }
             });
@@ -95,7 +103,8 @@ public class FindSpaceFragment extends Fragment {
                     BuddyViewModel.getBuddyNameList().add(FindSpaceViewModel.getFindSpaceNameList().remove(index));
                     BuddyViewModel.getBuddyMajorList().add(FindSpaceViewModel.getFindSpaceMajorList().remove(index));
                     BuddyViewModel.getBuddyCollegeList().add(FindSpaceViewModel.getFindSpaceCollegeList().remove(index));
-                    BuddyViewModel.getBuddyHabitsList().add(FindSpaceViewModel.getFindSpaceHabitsList().remove(index));
+                    BuddyViewModel.getBuddyLikesList().add(FindSpaceViewModel.getFindSpaceLikesList().remove(index));
+                    BuddyViewModel.getBuddyDislikesList().add(FindSpaceViewModel.getFindSpaceDislikesList().remove(index));
                     BuddyViewModel.getBuddyCoursesList().add(FindSpaceViewModel.getFindSpaceCoursesList().remove(index));
                     if (FindSpaceViewModel.getFindSpaceCollegeList().size() > 0) {
                         findSpaceViewModel.updateUserData();

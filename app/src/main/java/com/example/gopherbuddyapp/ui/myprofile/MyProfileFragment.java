@@ -23,8 +23,9 @@ public class MyProfileFragment extends Fragment {
 
     private FragmentMyprofileBinding binding;
     private FragmentProfileSettingsBinding binding2;
-    private SettingsObject settingsObject;
+
     private ExternalPlatformFragment externalPlatformFragment;
+    private static SettingsObject settingsObject;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -92,9 +93,11 @@ public class MyProfileFragment extends Fragment {
             fragmentTransaction.commit();
         });
 
+        return root;
+    }
 
-
-            return root;
+    public static SettingsObject getSettingsObject() {
+        return settingsObject;
     }
 
     @Override

@@ -2,12 +2,12 @@ package com.example.gopherbuddyapp.ui.myprofile;
 
 public class SettingsObject {
 
-    private String nameText;
-    private String majorText;
-    private String collegeText;
-    private String[] likesArray;
-    private String[] dislikesArray;
-    private String[] coursesArray;
+    private static String nameText;
+    private static String majorText;
+    private static String collegeText;
+    private static String[] likesArray;
+    private static String[] dislikesArray;
+    private static String[] coursesArray;
 
     public SettingsObject() {
         nameText = "Mac Intosh";
