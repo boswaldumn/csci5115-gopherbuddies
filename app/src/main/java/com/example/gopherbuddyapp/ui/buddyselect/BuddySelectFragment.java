@@ -83,7 +83,6 @@ public class BuddySelectFragment extends Fragment {
                     new Observer<Integer>() {
                         @Override
                         public void onChanged(Integer integer) {
-                            System.out.println("test");
                             buddyTwoProfilePicture.setImageResource(integer);
                         }
                     }
@@ -100,7 +99,7 @@ public class BuddySelectFragment extends Fragment {
                 BuddyViewModel.setIndex(1);
                 BuddyFragment buddyFragment = new BuddyFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment).remove(this);
                 fragmentTransaction.commit();
             });
         } else {
@@ -136,7 +135,7 @@ public class BuddySelectFragment extends Fragment {
                 BuddyViewModel.setIndex(2);
                 BuddyFragment buddyFragment = new BuddyFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment).remove(this);
                 fragmentTransaction.commit();
             });
         } else {
@@ -172,7 +171,7 @@ public class BuddySelectFragment extends Fragment {
                 BuddyViewModel.setIndex(3);
                 BuddyFragment buddyFragment = new BuddyFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment).remove(this);
                 fragmentTransaction.commit();
             });
         } else {
@@ -186,7 +185,9 @@ public class BuddySelectFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
+        System.out.println("Buddy Select Fragment destroyed");
         super.onDestroyView();
+        super.onDestroy();
         binding = null;
     }
 

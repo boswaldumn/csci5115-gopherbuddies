@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentBuddyprofileBinding;
 import com.example.gopherbuddyapp.ui.buddyselect.BuddySelectFragment;
@@ -23,7 +24,6 @@ import com.example.gopherbuddyapp.ui.findspace.FindSpaceViewModel;
 public class BuddyFragment extends Fragment {
 
     private FragmentBuddyprofileBinding binding;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -88,7 +88,9 @@ public class BuddyFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
+        System.out.println("Buddy Profile Fragment destroyed");
         super.onDestroyView();
+        super.onDestroy();
         binding = null;
     }
 }
