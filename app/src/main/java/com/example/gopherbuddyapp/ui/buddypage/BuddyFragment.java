@@ -72,7 +72,8 @@ public class BuddyFragment extends Fragment {
                 FindSpaceViewModel.getFindSpaceNameList().add(BuddyViewModel.getBuddyNameList().remove(index));
                 FindSpaceViewModel.getFindSpaceMajorList().add(BuddyViewModel.getBuddyMajorList().remove(index));
                 FindSpaceViewModel.getFindSpaceCollegeList().add(BuddyViewModel.getBuddyCollegeList().remove(index));
-                FindSpaceViewModel.getFindSpaceHabitsList().add(BuddyViewModel.getBuddyHabitsList().remove(index));
+                FindSpaceViewModel.getFindSpaceLikesList().add(BuddyViewModel.getBuddyLikesList().remove(index));
+                FindSpaceViewModel.getFindSpaceDislikesList().add(BuddyViewModel.getBuddyDislikesList().remove(index));
                 FindSpaceViewModel.getFindSpaceCoursesList().add(BuddyViewModel.getBuddyCoursesList().remove(index));
                 BuddySelectFragment buddySelectFragment = new BuddySelectFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
