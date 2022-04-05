@@ -2,6 +2,7 @@ package com.example.gopherbuddyapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
 import com.example.gopherbuddyapp.ui.findspace.FindSpaceViewModel;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         initializeFindSpaceUsers();
         initializeBuddies();
         profileSettings = new SettingsObject();
-
+        getSupportActionBar().hide();
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView.setVisibility(View.GONE);
     }
 
     public void initializeFindSpaceUsers() {

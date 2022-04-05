@@ -8,21 +8,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-<<<<<<< Updated upstream
-=======
-
-
 import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
->>>>>>> Stashed changes
+
 import com.example.gopherbuddyapp.databinding.FragmentHomeBinding;
 import com.example.gopherbuddyapp.ui.buddyselect.BuddySelectFragment;
 import com.example.gopherbuddyapp.ui.myprofile.ExternalPlatformFragment;
 import com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeFragment extends Fragment {
 
@@ -33,14 +31,10 @@ public class HomeFragment extends Fragment {
 
         HomeViewModel homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-<<<<<<< Updated upstream
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-=======
         new CountDownTimer(3000, 100)  {
             public void onTick(long millisUnitlFinished) {
 
@@ -50,10 +44,11 @@ public class HomeFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddySelectFragment);
                 fragmentTransaction.commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.nav_view);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+                bottomNavigationView.setSelectedItemId(R.id.navigation_buddyprofile);
             }
         }.start();
-
->>>>>>> Stashed changes
         return root;
     }
 

@@ -4,7 +4,7 @@
     <string name="title_findspace">Find Space</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_myprofile">My Profile</string>
-    <string name="title_buddyprofile">Buddy Profile</string>
+    <string name="title_buddyprofile">Buddy List</string>
     <string name="findspace_profilepicture">User\'s Profile Picture</string>
     <string name="findspace_followbutton">Follow</string>
     <string name="findspace_messagebutton">Message</string>

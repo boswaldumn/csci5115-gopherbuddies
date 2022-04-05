@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,7 +48,7 @@ public class ProfileSettingsFragment extends Fragment {
 
         binding = FragmentProfileSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         binding.editProfileName.setText(nameText);
         binding.editProfileName.addTextChangedListener(new TextWatcher() {
             @Override

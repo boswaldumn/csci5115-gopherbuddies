@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
@@ -32,6 +33,8 @@ public class BuddyFragment extends Fragment {
 
         binding = FragmentBuddyprofileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy Profile");
         final ImageView buddyuserProfilePicture = binding.BuddyuserProfilePicture;
         buddyViewModel.getBuddyProfilePic().observe(getViewLifecycleOwner(), buddyuserProfilePicture::setImageResource);
 
@@ -79,6 +82,7 @@ public class BuddyFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddySelectFragment);
                 fragmentTransaction.commit();
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy List");
             }
 
         });

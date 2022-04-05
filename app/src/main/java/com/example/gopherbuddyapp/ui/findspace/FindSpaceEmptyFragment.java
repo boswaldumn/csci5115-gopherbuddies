@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -23,7 +24,7 @@ public class FindSpaceEmptyFragment extends Fragment {
 
         binding = FragmentFindspaceemptyBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         final TextView textView = binding.textFindspaceempty;
         emptyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;

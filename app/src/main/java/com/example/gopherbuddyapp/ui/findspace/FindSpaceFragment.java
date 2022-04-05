@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
@@ -40,6 +41,7 @@ public class FindSpaceFragment extends Fragment {
 
             binding = FragmentFindspaceBinding.inflate(inflater, container, false);
             View root = binding.getRoot();
+            ((AppCompatActivity) getActivity()).getSupportActionBar().show();
             findSpaceViewModel.updateUserData(); // Needed to allow empty page to show up when necessary
             final ImageView findSpaceProfilePicture = binding.findSpaceProfilePicture;
             findSpaceViewModel.getProfilePic().observe(getViewLifecycleOwner(), findSpaceProfilePicture::setImageResource);

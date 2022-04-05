@@ -11,6 +11,7 @@ import android.widget.Button;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
@@ -35,6 +36,8 @@ public class BuddySelectFragment extends Fragment {
 
         binding = FragmentBuddyselectBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy List");
         buddySelectViewModel.updateUserData();
         // Buddy One
         final ImageView buddyOneProfilePicture = binding.buddyOneImageView;
@@ -65,6 +68,7 @@ public class BuddySelectFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
                 fragmentTransaction.commit();
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy Profile");
             });
         } else {
             dividerOne.setVisibility(View.INVISIBLE);
@@ -102,6 +106,7 @@ public class BuddySelectFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
                 fragmentTransaction.commit();
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy Profile");
             });
         } else {
             dividerTwo.setVisibility(View.INVISIBLE);
@@ -138,6 +143,7 @@ public class BuddySelectFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
                 fragmentTransaction.commit();
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy Profile");
             });
         } else {
             dividerThree.setVisibility(View.INVISIBLE);
@@ -174,6 +180,7 @@ public class BuddySelectFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
                 fragmentTransaction.commit();
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy Profile");
             });
         } else {
             dividerFour.setVisibility(View.INVISIBLE);
