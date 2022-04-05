@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
@@ -12,86 +11,110 @@
         android:layout_height="729dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <ImageView
-            android:id="@+id/userProfilePicture"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:contentDescription="User's Profile Picture"
-            android:src="@drawable/my_profile_pic"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ImageContrastCheck"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/text_college"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/userProfilePicture"
-            app:layout_constraintEnd_toStartOf="@+id/edit_button"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/userProfilePicture"
-            app:layout_constraintTop_toBottomOf="@+id/text_major" />
-
-        <TextView
-            android:id="@+id/text_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/text_major"
-            app:layout_constraintEnd_toStartOf="@+id/edit_button"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/userProfilePicture"
-            app:layout_constraintTop_toTopOf="@+id/userProfilePicture" />
-
-        <Button
-            android:id="@+id/edit_button"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="12dp"
-            android:text="Edit"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/userProfilePicture"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="#511515"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text_major"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/text_college"
-            app:layout_constraintEnd_toStartOf="@+id/edit_button"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/userProfilePicture"
-            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/profilePic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:clipChildren="true"
+                app:cardCornerRadius="50dp"
+                app:strokeWidth="4dp">
+
+                <ImageView
+                    android:id="@+id/userProfilePicture"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="User's Profile Picture"
+                    android:src="@drawable/my_profile_pic"
+                    tools:ignore="ImageContrastCheck"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="148dp"
+                android:fontFamily="@font/open_sans"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="182dp"
+                android:fontFamily="@font/open_sans"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_college"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="204dp"
+                android:fontFamily="@font/open_sans"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                tools:textAlignment="center" />
+
+            <Button
+                android:id="@+id/edit_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#00FFFFFF"
+                app:icon="@drawable/btn_edit"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTintMode="multiply"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </androidx.cardview.widget.CardView>
 
         <View
             android:id="@+id/divider"
             android:layout_width="409dp"
             android:layout_height="1dp"
             android:layout_marginTop="12dp"
-            android:background="?android:attr/listDivider"
+            android:background="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userProfilePicture" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <View
             android:id="@+id/divider2"
             android:layout_width="409dp"
             android:layout_height="1dp"
             android:layout_marginTop="12dp"
-            android:background="?android:attr/listDivider"
+            android:background="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/studyHabits" />
@@ -103,9 +126,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:background="#C0CCDA"
-            android:padding="5dp"
+            android:fontFamily="@font/open_sans"
+            android:padding="8dp"
             android:text="My Study Habits"
+            android:textColor="@color/black"
+            android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,76 +142,90 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:background="#EFF2F7"
-            android:padding="5dp"
+            android:fontFamily="@font/open_sans"
+            android:padding="8dp"
             android:text="Likes/Dislikes"
+            android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <Button
-            android:id="@+id/buttonCourses"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Courses"
-            app:layout_constraintEnd_toStartOf="@+id/button_schedule"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:background="@drawable/profilebg"
+            android:backgroundTint="#7D2E2E"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button_schedule"
-            android:layout_width="115dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Schedule"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/buttonCourses"
-            app:layout_constraintTop_toBottomOf="@+id/divider2" />
-
-        <TextView
-            android:id="@+id/profile_courses_header"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="#C0CCDA"
-            android:padding="5dp"
-            android:text="Courses"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonCourses" />
+            android:paddingBottom="16dp"
+            app:cardBackgroundColor="#EDEDED"
+            app:layout_constraintTop_toTopOf="@+id/divider2">
 
-        <TextView
-            android:id="@+id/courses_list"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="#EFF2F7"
-            android:padding="5dp"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_courses_header" />
+            <Button
+                android:id="@+id/button_schedule"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/open_sans"
+                android:text="Schedule"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/profileSchedule"
-            android:layout_width="0dp"
-            android:layout_height="380dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_schedule"
-            app:srcCompat="@drawable/my_profile_schedule" />
+            <Button
+                android:id="@+id/buttonCourses"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/open_sans"
+                android:text="Courses"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/courses_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="108dp"
+                android:fontFamily="@font/open_sans"
+                android:padding="8dp"
+                android:text="TextView"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/profile_courses_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/open_sans"
+                android:padding="8dp"
+                android:text="4 Courses"
+                android:textColor="#7A7A7A"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/profileSchedule"
+                android:layout_width="wrap_content"
+                android:layout_height="380dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="16dp"
+                app:srcCompat="@drawable/my_profile_schedule"
+                tools:visibility="invisible" />
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
