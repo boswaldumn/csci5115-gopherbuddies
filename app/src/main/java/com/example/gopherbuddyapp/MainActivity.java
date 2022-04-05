@@ -2,6 +2,7 @@ package com.example.gopherbuddyapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.gopherbuddyapp.ui.buddypage.BuddyViewModel;
 import com.example.gopherbuddyapp.ui.findspace.FindSpaceViewModel;
@@ -32,23 +33,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initializeFindSpaceUsers();
-        initializeBuddies();
-        profileSettings = new SettingsObject();
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        initializeFindSpaceUsers();
+        initializeBuddies();
+        profileSettings = new SettingsObject();
+        getSupportActionBar().hide();
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_findspace, R.id.navigation_buddyprofile, R.id.navigation_myprofile)
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_findspace, R.id.navigation_buddyprofile, R.id.navigation_myprofile)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
-        // Selects an invisible option at start so none of the bottom nav buttons are selected
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
-        bottomNavigationView.getMenu().getItem(3).setChecked(true);
+        bottomNavigationView.setVisibility(View.GONE);
     }
 
     public void initializeFindSpaceUsers() {

@@ -96,7 +96,7 @@ public class FindSpaceFragment extends Fragment {
                 }
             });
 
-            final Button followButton = binding.followButton;
+            final FloatingActionButton followButton = binding.followButton;
             followButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

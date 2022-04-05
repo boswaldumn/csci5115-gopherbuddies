@@ -33,7 +33,7 @@ public class MyProfileFragment extends Fragment {
         if (getActivity() instanceof MainActivity) {
             settingsObject = ((MainActivity) getActivity()).getSettings();
         }
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         binding = FragmentMyprofileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         ((AppCompatActivity)getActivity()).getSupportActionBar().show();

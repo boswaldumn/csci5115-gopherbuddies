@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
@@ -25,6 +26,7 @@ public class BuddyFragment extends Fragment {
 
     private FragmentBuddyprofileBinding binding;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         BuddyViewModel buddyViewModel =
@@ -32,7 +34,8 @@ public class BuddyFragment extends Fragment {
 
         binding = FragmentBuddyprofileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Buddy Profile");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy Profile");
         final ImageView buddyuserProfilePicture = binding.BuddyuserProfilePicture;
         buddyViewModel.getBuddyProfilePic().observe(getViewLifecycleOwner(), buddyuserProfilePicture::setImageResource);
 
@@ -69,7 +72,6 @@ public class BuddyFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int index = BuddyViewModel.getIndex();
-                ((MainActivity)getActivity()).getSupportActionBar().setTitle("Buddy List");
                 FindSpaceViewModel.getFindSpaceProfilePicList().add(BuddyViewModel.getBuddyProfilePicList().remove(index));
                 FindSpaceViewModel.getFindSpaceNameList().add(BuddyViewModel.getBuddyNameList().remove(index));
                 FindSpaceViewModel.getFindSpaceMajorList().add(BuddyViewModel.getBuddyMajorList().remove(index));
@@ -81,6 +83,7 @@ public class BuddyFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddySelectFragment);
                 fragmentTransaction.commit();
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Buddy List");
             }
 
         });
@@ -90,7 +93,6 @@ public class BuddyFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        System.out.println("Buddy Profile Fragment destroyed");
         super.onDestroyView();
         super.onDestroy();
         binding = null;

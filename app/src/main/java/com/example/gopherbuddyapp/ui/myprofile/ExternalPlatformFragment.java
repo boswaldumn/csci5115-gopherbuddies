@@ -26,7 +26,7 @@ public class ExternalPlatformFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentExternalPlatformBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         final Button discordButton = binding.DiscordButton;
         discordButton.setOnClickListener(new View.OnClickListener() {
             @Override
