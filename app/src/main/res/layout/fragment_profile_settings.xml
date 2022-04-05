@@ -19,7 +19,7 @@
             android:layout_marginStart="150dp"
             android:layout_marginTop="50dp"
             android:background="#00FFFFFF"
-            android:elevation="10dp"
+            android:elevation="100dp"
             android:fontFamily="@font/open_sans"
             android:textStyle="bold"
             app:icon="@drawable/ic_img_upload"
@@ -45,6 +45,7 @@
                 android:id="@+id/settingsProfilePic"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:elevation="0dp"
                 android:src="@drawable/my_profile_pic" />
         </androidx.cardview.widget.CardView>
 

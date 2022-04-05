@@ -8,172 +8,193 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="729dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <ImageView
-            android:id="@+id/findSpaceProfilePicture"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="40dp"
-            android:contentDescription="@string/findspace_profilepicture"
-            android:src="@drawable/my_profile_pic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ImageContrastCheck"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/text_name"
-            android:layout_width="279dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/findSpaceProfilePicture" />
-
-        <TextView
-            android:id="@+id/text_college"
-            android:layout_width="279dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="4dp"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_major" />
-
-        <TextView
-            android:id="@+id/text_major"
-            android:layout_width="279dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="4dp"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_name" />
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="409dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/followButton" />
-
-        <TextView
-            android:id="@+id/findSpaceStudyHeader"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="#C0CCDA"
-            android:padding="5dp"
-            android:text="@string/findspace_studyheader"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-        <TextView
-            android:id="@+id/findViewCoursesHeader"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="12dp"
-            android:text="@string/findspace_coursesheader"
-            app:layout_constraintBottom_toTopOf="@+id/courses_list"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/divider2"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="409dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/studyHabits" />
-
-        <TextView
-            android:id="@+id/studyHabits"
-            android:layout_width="0dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:background="#EFF2F7"
-            android:padding="5dp"
-            android:text="@string/findspace_studyhabits"
-            android:textColor="#616161"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/findSpaceStudyHeader" />
-
-        <TextView
-            android:id="@+id/courses_list"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:background="#EFF2F7"
-            android:padding="5dp"
-            android:text="@string/findspace_courses"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#616161"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="35dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/findViewCoursesHeader" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/followButton"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/findspace_followbutton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_college" />
+            <View
+                android:id="@+id/divider10"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:background="@drawable/profilebg"
+                android:backgroundTint="#7D2E2E"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/messageButton"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="72dp"
-            android:text="@string/findspace_messagebutton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_college" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/profilePic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="28dp"
+                android:clipChildren="true"
+                app:cardCornerRadius="75dp"
+                app:strokeWidth="4dp">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/skipUserButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_add" />
+                <ImageView
+                    android:id="@+id/findSpaceProfilePicture"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/findspace_profilepicture"
+                    android:src="@drawable/my_profile_pic"
+                    tools:ignore="ImageContrastCheck"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/text_college"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="204dp"
+                android:fontFamily="@font/open_sans"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:translationY="40dp"
+                tools:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="148dp"
+                android:fontFamily="@font/open_sans"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#833D3D"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:translationY="40dp"
+                tools:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="182dp"
+                android:fontFamily="@font/open_sans"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:translationY="40dp"
+                tools:textAlignment="center" />
+
+            <Button
+                android:id="@+id/messageButton"
+                android:layout_width="125dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="270dp"
+                android:fontFamily="@font/open_sans"
+                android:text="Message"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/findSpaceStudyHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="325dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/open_sans"
+                    android:padding="5dp"
+                    android:text="@string/findspace_studyheader"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="@id/divider" />
+
+                <TextView
+                    android:id="@+id/studyHabits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/open_sans"
+                    android:padding="5dp"
+                    android:text="@string/findspace_studyhabits"
+                    android:textColor="#616161"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/findViewCoursesHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/open_sans"
+                    android:padding="5dp"
+                    android:text="@string/findspace_coursesheader"
+                    android:textColor="#000000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/courses_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/open_sans"
+                    android:padding="5dp"
+                    android:text="@string/findspace_courses"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#616161"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/followButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:clickable="true"
+                        app:maxImageSize="30dp"
+                        app:srcCompat="@drawable/ic_add_buddy"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/skipUserButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginStart="164dp"
+                        android:layout_marginEnd="32dp"
+                        android:clickable="true"
+                        app:srcCompat="@android:drawable/ic_menu_add"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
