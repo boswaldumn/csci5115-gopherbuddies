@@ -169,11 +169,11 @@
 
             <Button
                 android:id="@+id/button_schedule"
-                android:layout_width="135dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginTop="12dp"
-                android:layout_marginEnd="48dp"
+                android:layout_marginEnd="30dp"
                 android:fontFamily="@font/open_sans"
                 android:text="Schedule"
                 android:textSize="16dp"
@@ -181,9 +181,9 @@
 
             <Button
                 android:id="@+id/buttonCourses"
-                android:layout_width="135dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/open_sans"
                 android:text="Courses"

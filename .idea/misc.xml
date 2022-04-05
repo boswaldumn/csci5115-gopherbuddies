@@ -16,11 +16,14 @@
         <entry key="..\:/AndroidStudioProjects/csci5115-gopherbuddyapp/app/src/main/res/layout/fragment_myprofile.xml" value="0.14754098360655737" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/drawable/btn_edit.xml" value="0.1855" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/drawable/ic_btn_edit.xml" value="0.2125" />
+        <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/drawable/ic_img_upload.xml" value="0.251" />
+        <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/drawable/ic_nav_find.xml" value="0.251" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/font/opensans.xml" value="0.3104166666666667" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/layout/activity_main.xml" value="0.2033514492753623" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/layout/fragment_buddyprofile.xml" value="0.2033514492753623" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/layout/fragment_findspaceempty.xml" value="0.2033514492753623" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/layout/fragment_myprofile.xml" value="0.2857142857142857" />
+        <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/layout/fragment_profile_settings.xml" value="0.31928480204342274" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/menu/bottom_nav_menu.xml" value="0.28020833333333334" />
         <entry key="..\:/CSCI5115/csci5115-gopherbuddies/app/src/main/res/xml/root_preferences.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/GopherBuddyApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
@@ -31,12 +34,7 @@
       </map>
     </option>
   </component>
-<<<<<<< Updated upstream
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
->>>>>>> Stashed changes
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

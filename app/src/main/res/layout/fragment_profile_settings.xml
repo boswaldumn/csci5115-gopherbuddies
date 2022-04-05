@@ -10,152 +10,179 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/settingsProfilePic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/my_profile_pic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/settingProfilePicButton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="50dp"
+            android:background="#00FFFFFF"
+            android:elevation="10dp"
+            android:fontFamily="@font/open_sans"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_img_upload"
+            app:iconGravity="textStart"
+            app:iconTintMode="multiply"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider8"
+            tools:iconPadding="0dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/settingProfilePicButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:text="Change Profile Picture"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editCollege"
-        app:layout_constraintEnd_toEndOf="@+id/settingsProfilePic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsProfilePic" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:elevation="0dp"
+            app:cardCornerRadius="75dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editCollege"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="College"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
-        app:layout_constraintTop_toBottomOf="@+id/collegeLabel" />
+            <ImageView
+                android:id="@+id/settingsProfilePic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/my_profile_pic" />
+        </androidx.cardview.widget.CardView>
 
-    <EditText
-        android:id="@+id/editProfileName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Mac Intosh"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
-        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/profilebg"
+            android:backgroundTint="#7D2E2E"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editMajor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Major"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
-        app:layout_constraintTop_toBottomOf="@+id/majorLabel" />
+        <EditText
+            android:id="@+id/editProfileName"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans"
+            android:inputType="textPersonName"
+            android:text="Mac Intosh"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
 
         <TextView
             android:id="@+id/nameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="212dp"
+            android:fontFamily="@font/open_sans"
             android:labelFor="@id/editProfileName"
             android:text="Name:"
+            android:textColor="#828282"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/majorLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans"
             android:labelFor="@id/editProfileName"
             android:text="Major:"
+            android:textColor="#828282"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editProfileName" />
+
+        <EditText
+            android:id="@+id/editMajor"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans"
+            android:inputType="textPersonName"
+            android:text="Major"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/majorLabel" />
 
         <TextView
             android:id="@+id/collegeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans"
             android:labelFor="@id/editProfileName"
             android:text="College:"
+            android:textColor="#828282"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/settingsProfilePic"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editMajor" />
 
-        <Button
-            android:id="@+id/linkPlatformsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginBottom="40dp"
-            android:layout_marginTop="40dp"
-            android:text="Link External Platforms"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <EditText
+            android:id="@+id/editCollege"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans"
+            android:inputType="textPersonName"
+            android:text="College"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editCourses" />
+            app:layout_constraintTop_toBottomOf="@+id/collegeLabel" />
 
-    <TextView
-        android:id="@+id/likesLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Likes:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCollege" />
+        <TextView
+            android:id="@+id/likesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="Likes:"
+            android:textColor="#828282"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editCollege" />
 
-    <TextView
-        android:id="@+id/dislikesLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Dislikes:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editLikes" />
+        <TextView
+            android:id="@+id/dislikesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="Dislikes:"
+            android:textColor="#828282"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editLikes" />
 
         <TextView
             android:id="@+id/coursesLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="19dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans"
             android:text="Courses:"
+            android:textColor="#828282"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editDislikes" />
 
@@ -166,9 +193,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="start|top"
             android:inputType="textMultiLine"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/likesLabel" />
@@ -180,9 +209,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="start|top"
             android:inputType="textMultiLine"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dislikesLabel" />
@@ -194,12 +225,30 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="start|top"
             android:inputType="textMultiLine"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/coursesLabel" />
+
+        <Button
+            android:id="@+id/linkPlatformsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/open_sans"
+            android:text="Link External Platforms"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editCourses" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
