@@ -26,7 +26,26 @@
     <fragment
         android:id="@+id/navigation_buddyprofile"
         android:name="com.example.gopherbuddyapp.ui.buddyselect.BuddySelectFragment"
-        android:label="@string/title_buddyprofile"
-        tools:layout="@layout/fragment_buddyprofile" />
+        android:label="@string/title_buddyselect"
+        tools:layout="@layout/fragment_buddyprofile" >
+        <action
+            android:id="@+id/action_navigation_buddyprofile_to_buddySelectFragment"
+            android:label="@string/title_buddyselect"
+            app:destination="@id/navigation_buddyselect" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profilesettings"
+        android:name="com.example.gopherbuddyapp.ui.myprofile.ProfileSettingsFragment"
+        android:label="fragment_profile_settings"
+        tools:layout="@layout/fragment_profile_settings" >
+        <action
+            android:id="@+id/action_profileSettingsFragment2_to_navigation_myprofile"
+            app:destination="@id/navigation_myprofile" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_buddyselect"
+        android:name="com.example.gopherbuddyapp.ui.buddyselect.BuddySelectFragment"
+        android:label="fragment_buddyselect"
+        tools:layout="@layout/fragment_buddyselect"/>
 
 </navigation>

@@ -11,6 +11,7 @@ import android.widget.Button;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
@@ -18,6 +19,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentBuddyselectBinding;
 import com.example.gopherbuddyapp.ui.buddypage.BuddyFragment;
@@ -36,6 +38,7 @@ public class BuddySelectFragment extends Fragment {
         binding = FragmentBuddyselectBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         buddySelectViewModel.updateUserData();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
         // Buddy One
         final ImageView buddyOneProfilePicture = binding.buddyOneImageView;
         final TextView buddyNameOne = binding.BuddyNameOneText;
@@ -83,7 +86,6 @@ public class BuddySelectFragment extends Fragment {
                     new Observer<Integer>() {
                         @Override
                         public void onChanged(Integer integer) {
-                            System.out.println("test");
                             buddyTwoProfilePicture.setImageResource(integer);
                         }
                     }
@@ -100,7 +102,7 @@ public class BuddySelectFragment extends Fragment {
                 BuddyViewModel.setIndex(1);
                 BuddyFragment buddyFragment = new BuddyFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment).remove(this);
                 fragmentTransaction.commit();
             });
         } else {
@@ -136,7 +138,7 @@ public class BuddySelectFragment extends Fragment {
                 BuddyViewModel.setIndex(2);
                 BuddyFragment buddyFragment = new BuddyFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment).remove(this);
                 fragmentTransaction.commit();
             });
         } else {
@@ -172,7 +174,7 @@ public class BuddySelectFragment extends Fragment {
                 BuddyViewModel.setIndex(3);
                 BuddyFragment buddyFragment = new BuddyFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment).remove(this);
                 fragmentTransaction.commit();
             });
         } else {
@@ -186,7 +188,9 @@ public class BuddySelectFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
+        System.out.println("Buddy Select Fragment destroyed");
         super.onDestroyView();
+        super.onDestroy();
         binding = null;
     }
 

@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -25,7 +26,7 @@ public class ExternalPlatformFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentExternalPlatformBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
         final Button discordButton = binding.DiscordButton;
         discordButton.setOnClickListener(new View.OnClickListener() {
             @Override

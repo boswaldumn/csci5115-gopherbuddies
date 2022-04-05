@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gopherbuddyapp.MainActivity;
 import com.example.gopherbuddyapp.R;
 import com.example.gopherbuddyapp.databinding.FragmentBuddyprofileBinding;
 import com.example.gopherbuddyapp.ui.buddyselect.BuddySelectFragment;
@@ -24,7 +25,6 @@ public class BuddyFragment extends Fragment {
 
     private FragmentBuddyprofileBinding binding;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         BuddyViewModel buddyViewModel =
@@ -32,6 +32,7 @@ public class BuddyFragment extends Fragment {
 
         binding = FragmentBuddyprofileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Buddy Profile");
         final ImageView buddyuserProfilePicture = binding.BuddyuserProfilePicture;
         buddyViewModel.getBuddyProfilePic().observe(getViewLifecycleOwner(), buddyuserProfilePicture::setImageResource);
 
@@ -68,6 +69,7 @@ public class BuddyFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int index = BuddyViewModel.getIndex();
+                ((MainActivity)getActivity()).getSupportActionBar().setTitle("Buddy List");
                 FindSpaceViewModel.getFindSpaceProfilePicList().add(BuddyViewModel.getBuddyProfilePicList().remove(index));
                 FindSpaceViewModel.getFindSpaceNameList().add(BuddyViewModel.getBuddyNameList().remove(index));
                 FindSpaceViewModel.getFindSpaceMajorList().add(BuddyViewModel.getBuddyMajorList().remove(index));
@@ -88,7 +90,9 @@ public class BuddyFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
+        System.out.println("Buddy Profile Fragment destroyed");
         super.onDestroyView();
+        super.onDestroy();
         binding = null;
     }
 }

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.MutableLiveData;
@@ -35,7 +36,7 @@ public class MyProfileFragment extends Fragment {
 
         binding = FragmentMyprofileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
         final TextView nameText = binding.textName;
         nameText.setText(settingsObject.getName());
 
