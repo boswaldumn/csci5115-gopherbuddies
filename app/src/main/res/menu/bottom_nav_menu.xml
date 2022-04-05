@@ -2,11 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
-
-    <item
         android:id="@+id/navigation_findspace"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_findspace" />
@@ -14,12 +9,18 @@
     <item
         android:id="@+id/navigation_buddyprofile"
         android:icon="@drawable/ic_myprofile_icon"
-        android:title="@string/title_buddyprofile" />
+        android:title="@string/title_buddyselect" />
 
     <item
         android:id="@+id/navigation_myprofile"
         android:icon="@drawable/ic_myprofile_icon"
         android:title="@string/title_myprofile" />
+
+    <item
+        android:id="@+id/invisible"
+        android:visible="false"
+        android:icon="@drawable/ic_myprofile_icon"
+        android:title="@string/title_buddyprofile" />
 
 
 

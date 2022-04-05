@@ -32,6 +32,7 @@ public class BuddyFragment extends Fragment {
 
         binding = FragmentBuddyprofileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Buddy Profile");
         final ImageView buddyuserProfilePicture = binding.BuddyuserProfilePicture;
         buddyViewModel.getBuddyProfilePic().observe(getViewLifecycleOwner(), buddyuserProfilePicture::setImageResource);
 

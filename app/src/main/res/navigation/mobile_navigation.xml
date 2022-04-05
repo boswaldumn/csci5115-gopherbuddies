@@ -26,10 +26,11 @@
     <fragment
         android:id="@+id/navigation_buddyprofile"
         android:name="com.example.gopherbuddyapp.ui.buddyselect.BuddySelectFragment"
-        android:label="@string/title_buddyprofile"
+        android:label="@string/title_buddyselect"
         tools:layout="@layout/fragment_buddyprofile" >
         <action
             android:id="@+id/action_navigation_buddyprofile_to_buddySelectFragment"
+            android:label="@string/title_buddyselect"
             app:destination="@id/navigation_buddyselect" />
     </fragment>
     <fragment
