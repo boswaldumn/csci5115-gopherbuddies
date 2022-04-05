@@ -210,7 +210,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/open_sans"
                 android:padding="8dp"
-                android:text="4 Courses"
+                android:text="Courses"
                 android:textColor="#7A7A7A"
                 android:textSize="16dp"
                 android:textStyle="bold" />
