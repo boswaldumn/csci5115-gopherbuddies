@@ -63,7 +63,7 @@ public class BuddySelectFragment extends Fragment {
                 BuddyViewModel.setIndex(0);
                 BuddyFragment buddyFragment = new BuddyFragment();
                 FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, buddyFragment).remove(this);
                 fragmentTransaction.commit();
             });
         } else {
