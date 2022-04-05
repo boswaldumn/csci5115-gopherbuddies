@@ -89,7 +89,7 @@ public class MyProfileFragment extends Fragment {
         editButton.setOnClickListener(view -> {
             ProfileSettingsFragment profileSettingsFragment = new ProfileSettingsFragment(settingsObject);
             FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, profileSettingsFragment).addToBackStack(null);
+            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, profileSettingsFragment);
             fragmentTransaction.commit();
         });
 
