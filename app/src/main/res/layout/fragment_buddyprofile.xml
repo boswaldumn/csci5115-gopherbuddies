@@ -129,7 +129,7 @@
                 android:layout_marginEnd="16dp"
                 android:background="#C0CCDA"
                 android:padding="5dp"
-                android:text="4 Courses"
+                android:text="Courses"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

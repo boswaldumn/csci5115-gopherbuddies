@@ -29,7 +29,6 @@ public class MyProfileFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
         if (getActivity() instanceof MainActivity) {
             settingsObject = ((MainActivity) getActivity()).getSettings();
         }
@@ -49,13 +48,19 @@ public class MyProfileFragment extends Fragment {
         final TextView studyHabits = binding.studyHabits;
         String[] likes = settingsObject.getLikes();
         String[] dislikes = settingsObject.getDislikes();
-        String studyPreferences = "Likes:\n";
-        for (int i = 0; i < likes.length; i++) {
-            studyPreferences += "+ " + likes[i] + "\n";
+        String studyPreferences = "";
+        if (likes.length != 0 && !likes[0].equals("")) {
+            studyPreferences = "Likes:\n";
+            for (int i = 0; i < likes.length; i++) {
+                studyPreferences += "+ " + likes[i] + "\n";
+            }
+            studyPreferences += "\n";
         }
-        studyPreferences += "\nDislikes:\n";
-        for (int i = 0; i < dislikes.length; i++) {
-            studyPreferences += "- " + dislikes[i] + "\n";
+        if (dislikes.length != 0 && !dislikes[0].equals("")) {
+            studyPreferences += "Dislikes:\n";
+            for (int i = 0; i < dislikes.length; i++) {
+                studyPreferences += "- " + dislikes[i] + "\n";
+            }
         }
         studyHabits.setText(studyPreferences);
 
@@ -89,7 +94,7 @@ public class MyProfileFragment extends Fragment {
         editButton.setOnClickListener(view -> {
             ProfileSettingsFragment profileSettingsFragment = new ProfileSettingsFragment(settingsObject);
             FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, profileSettingsFragment).addToBackStack(null);
+            fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, profileSettingsFragment);
             fragmentTransaction.commit();
         });
 
