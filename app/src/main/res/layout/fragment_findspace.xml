@@ -177,6 +177,7 @@
                         android:clickable="true"
                         app:maxImageSize="30dp"
                         app:srcCompat="@drawable/ic_add_buddy"
+                        app:tint="@null"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -187,7 +188,7 @@
                         android:layout_marginStart="164dp"
                         android:layout_marginEnd="32dp"
                         android:clickable="true"
-                        app:srcCompat="@android:drawable/ic_menu_add"
+                        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </LinearLayout>
 
