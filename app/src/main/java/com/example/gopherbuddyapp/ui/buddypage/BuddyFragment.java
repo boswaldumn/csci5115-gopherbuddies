@@ -69,6 +69,7 @@ public class BuddyFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int index = BuddyViewModel.getIndex();
+                ((MainActivity)getActivity()).getSupportActionBar().setTitle("Buddy List");
                 FindSpaceViewModel.getFindSpaceProfilePicList().add(BuddyViewModel.getBuddyProfilePicList().remove(index));
                 FindSpaceViewModel.getFindSpaceNameList().add(BuddyViewModel.getBuddyNameList().remove(index));
                 FindSpaceViewModel.getFindSpaceMajorList().add(BuddyViewModel.getBuddyMajorList().remove(index));
