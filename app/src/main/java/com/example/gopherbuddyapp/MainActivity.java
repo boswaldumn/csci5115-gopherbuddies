@@ -58,36 +58,43 @@ public class MainActivity extends AppCompatActivity {
         pics.add(R.drawable.annedroid);
         pics.add(R.drawable.samsung);
         pics.add(R.drawable.edvidia);
+        pics.add(R.drawable.mikerosoft);
 
         ArrayList<String> names = FindSpaceViewModel.getFindSpaceNameList();
         names.add("Anne Droid");
         names.add("Sam Sung");
         names.add("Ed Vidia");
+        names.add("Mike Rosoft");
 
         ArrayList<String> majors = FindSpaceViewModel.getFindSpaceMajorList();
         majors.add("Computer Science Major");
         majors.add("Acting Major");
         majors.add("Apparel Design Major");
+        majors.add("Biomedical Engineering Major");
 
         ArrayList<String> colleges = FindSpaceViewModel.getFindSpaceCollegeList();
         colleges.add("College of Science and Engineering");
         colleges.add("College of Liberal Arts");
         colleges.add("College of Design");
+        colleges.add("College of Science and Engineering");
 
         ArrayList<String[]> likes = FindSpaceViewModel.getFindSpaceLikesList();
         likes.add(new String[]{"Small groups (2-3 people)"});
         likes.add(new String[]{"Medium groups (3-5 people)"});
         likes.add(new String[]{"Large groups (5+ people)"});
+        likes.add(new String[]{"Libraries, coffee shops, and on-campus spaces", "Small groups (2-3 people)"});
 
         ArrayList<String[]> dislikes = FindSpaceViewModel.getFindSpaceDislikesList();
+        dislikes.add(new String[]{"Noisy environments", "Online group work"});
+        dislikes.add(new String[]{"Noisy environments", ""});
         dislikes.add(new String[]{"Noisy environments"});
-        dislikes.add(new String[]{"Noisy environments"});
-        dislikes.add(new String[]{"Noisy environments"});
+        dislikes.add(new String[]{"Online group work"});
 
         ArrayList<String[]> courses = FindSpaceViewModel.getFindSpaceCoursesList();
         courses.add(new String[]{"PE 1015: Weight Training", "BIOL 1009: General Biology"});
         courses.add(new String[]{"PE 1016: Weight Training", "BIOL 1010: General Biology"});
         courses.add(new String[]{"PE 1017: Weight Training", "BIOL 1011: General Biology"});
+        courses.add(new String[]{"CSCI 1133: Introduction to Computing", "BIOL 1009: General Biology", "PHYS 1301: Introductory Physics"});
     }
 
     public void initializeBuddies() {
