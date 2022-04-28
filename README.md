@@ -1,5 +1,5 @@
 # CSCI5115 - UI Design, Implementation, & Evaluation
-This repository is of our final project for CSCI5115 at the University of Minnesota. My group and I created the application 'Gopherbuddies' on Android Studio. You can read more about the project below.
+This repository is our final project for CSCI5115 at the University of Minnesota. My group and I created the application 'Gopherbuddies' on Android Studio. You can read more about the project below.
 
 # Gopherbuddies Project
 This application was built in Android Stuido Code as our final project. The class was tasked to identify a problem to solve in the world today and be able to conduct a user research study of the targeted audience. Our group recognized the importance of making connections within your classes and the value of collaborating with peers. However, it is not always the easiest to find someone you would feel comfortable working with in a large classroom setting. Furthermore, we felt the switch to online classes as a result of the pandemic made this problem even more challenging as you do not get the same face to face interactions with other students. We wanted to create
